@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enviar leads a Heroku</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.8.3/styles/salesforce-lightning-design-system.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="icon" type="image/png" href="./img/heroku.jpg" sizes="32x32">
+    <script data-main="js/main" src="js/require.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container-fluid" id="setup">
+        <article class="slds-card">
+            <div class="slds-page-header">
+                <div class="slds-page-header__row">
+                    <div class="slds-page-header__col-title">
+                        <div class="slds-media">
+                            <div class="slds-media__figure">
+                                <span class="slds-icon_container slds-icon-standard-opportunity">
+                                    <img src="./img/heroku.jpg" class="img-fluid d-block mx-auto" />
+                                </span>
+                            </div>
+                            <div class="slds-media__body">
+                                <div class="slds-page-header__name">
+                                    <div class="slds-page-header__name-title">
+                                        <h1>
+                                            <span>Mapeo de campos leads</span>
+                                        </h1>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </article>
+
+
+        <table aria-multiselectable="true"
+            class="slds-table slds-table_bordered slds-table_edit slds-table_fixed-layout slds-table_resizable-cols slds-tree slds-table_tree"
+            role="treegrid">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th aria-label="Campo Marketing Cloud" aria-sort="none"
+                        class="slds-has-button-menu slds-is-resizable slds-is-sortable" scope="col">
+                        <a class="slds-th__action slds-text-link_reset" href="javascript:void(0);" role="button"
+                            tabindex="-1">
+                            <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                <span class="slds-truncate slds-align_absolute-center"
+                                    title="Campo Marketing Cloud">Campo
+                                    Marketing Cloud</span>
+                            </div>
+                        </a>
+                    </th>
+
+                    <th aria-label="Campo Heroku App" aria-sort="none"
+                        class="slds-has-button-menu slds-is-resizable slds-is-sortable" scope="col">
+                        <a class="slds-th__action slds-text-link_reset" href="javascript:void(0);" role="button"
+                            tabindex="-1">
+                            <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                <span class="slds-truncate slds-align_absolute-center" title="Campo Heroku App">Campo
+                                    Heroku
+                                    App</span>
+                            </div>
+                        </a>
+
+                    </th>
+                </tr>
+
+            </thead>
+            <tbody>
+
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="Phone Number" role="gridcell">
+                        <div class="slds-truncate" title="Email">
+                            <div class="slds-truncate" title="First Name">
+                                <b>
+                                    <span>Email</span>
+                                </b>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-label="Employees" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-01">
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="Phone Number" role="gridcell">
+                        <div class="slds-truncate" title="First Name">
+                            <b>
+                                <span>First Name</span>
+                            </b>
+                        </div>
+                    </td>
+                    <td data-label="Employees" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-02">
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="Phone Number" role="gridcell">
+                        <div class="slds-truncate" title="Middle Name">
+                            <div class="slds-truncate" title="First Name">
+                                <b>
+                                    <span>Middle Name</span>
+                                </b>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-label="Employees" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-03">
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="Phone Number" role="gridcell">
+                        <div class="slds-truncate" title="Last Name">
+                            <div class="slds-truncate" title="First Name">
+                                <b>
+                                    <span>Last Name</span>
+                                </b>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-label="Employees" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-04">
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="Phone Number" role="gridcell">
+                        <div class="slds-truncate" title="UTMC">
+                            <div class="slds-truncate" title="First Name">
+                                <b>
+                                    <span>UTMC</span>
+                                </b>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-label="Employees" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-05">
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="Phone Number" role="gridcell">
+                        <div class="slds-truncate" title="UTMS">
+                            <div class="slds-truncate" title="First Name">
+                                <b>
+                                    <span>UTMS</span>
+                                </b>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-label="Employees" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-06">
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-5" id="summary">
+        <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_success" role="alert">
+            <h2>¡Finalizaste la configuración!
+            </h2>
+        </div>
+
+    </div>
+</body>
+
+</html>

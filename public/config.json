@@ -1,0 +1,66 @@
+{
+	"workflowApiVersion": "1.1",
+	"metaData": {
+		"icon": "img/heroku.jpg",
+        "category": "message",
+        "configOnDrop": false
+	},
+	"type": "REST",
+	"lang": {
+		"es-MX": {
+			"name": "Enviar leads y cuentas a Heroku",
+			"description": "Custom activity para enviar leads y cuentas a heroku"
+		}
+	},
+	"arguments": {
+		"execute": {
+			"inArguments": [],
+			"outArguments": [],
+			"url": "https://leadsentheroku.herokuapp.com/execute",
+			"verb": "POST",
+			"format": "json",
+			"header": "",
+			"body": "",
+			"useJwt": true 
+		}
+	},
+	"configurationArguments": {
+		"applicationExtensionKey": "9e4d5651-ff86-4583-bfba-f2f90b4bbfca",
+		"save": {
+			"url": "https://leadsentheroku.herokuapp.com/save",
+			"verb": "POST",
+			"format": "json",
+			"body": "",
+			"useJwt": true
+			
+		},
+		"publish": {
+			"url": "https://leadsentheroku.herokuapp.com/publish",
+			"verb": "POST",
+			"format": "json",
+			"body": "",
+			"useJwt": true
+		},
+		"validate": {
+			"url": "https://leadsentheroku.herokuapp.com/validate",
+			"verb": "POST",
+			"format": "json",
+			"body": "",
+			"useJwt": true
+		}
+	},
+	"wizardSteps": [
+        { "label": "Configuración", "key": "setup" },
+        { "label": "Resumen", "key": "summary" }
+	],
+	"userInterfaces": {
+		"configModal": {
+			"width": 700,
+			"height": 600,
+			"fullscreen": true
+		},
+		 "configInspector": {
+         "size": "medium"
+      }
+	}
+}
