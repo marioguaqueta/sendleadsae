@@ -97,6 +97,7 @@ function createJson(decoded, task_id){
   var lastnameField;
   var UTMCField;
   var UTMSField;
+  var inArguments = decoded;
   
   inArguments.forEach(function(obj) { 
     if (obj.email != undefined) {
@@ -138,6 +139,22 @@ function createJson(decoded, task_id){
 
 function sendRequest(jsonPayLoad){
   console.log(jsonPayLoad);
+  var options = {
+    method: 'POST',
+    uri: 'https://lead-creation.herokuapp.com/leads',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: jsonPayLoad,
+    json: true
+  };
+
+  rp(options).then(function (response) {
+    console.log("Success Send");
+  })
+    .catch(function (err) {
+      console.log("Failed Send");
+    });
 }
   
 
