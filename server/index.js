@@ -69,6 +69,7 @@ app.post('/execute',function (req, res){
       if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
 
           //Logica de backend
+          console.log(decoded.inArguments);
           res.status(200);
           res.send({
               route: 'execute'
