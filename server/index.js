@@ -126,8 +126,19 @@ function createJson(decoded, task_id){
     }   
   });
 
-
-  console.log("regex[firstnameField] " + regex[firstnameField]);
+  var firstname = regex[firstnameField];
+  var middlename = regex[middlenameField];
+  var lastname = regex[lastnameField];
+  var email = regex[emailField];
+  var UTMS = regex[UTMSField];
+  var UTMc = regex[UTMCField];
+  console.log(firstname);
+  console.log(middlename);
+  console.log(lastname);
+  console.log(email);
+  console.log(UTMS);
+  console.log(UTMc);
+  
 
   
     var options = {
@@ -138,12 +149,12 @@ function createJson(decoded, task_id){
       },
       body: JSON.stringify({
         'id_task':task_id,
-        'firstname':regex[firstnameField],
-        'middlename':regex[middlenameField],
-        'lastname' : regex[lastnameField],
-        'email': regex[emailField],
-        'UTMS':regex[UTMSField],
-        'UTMc':regex[UTMCField]
+        'firstname':firstname,
+        'middlename':middlename,
+        'lastname' : lastname,
+        'email': email,
+        'UTMS':UTMS,
+        'UTMc':UTMc
        }),
       json: true
     };
