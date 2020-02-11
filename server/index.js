@@ -122,6 +122,7 @@ function createJson(decoded, task_id){
       UTMSField = obj.UTMS;
       console.log(UTMSField);
     }else{
+      console.log(Object.values(obj));
       regex['%%' + extractFieldName(Object.keys(obj)) + '%%'] =  Object.values(obj);
     }   
   });
