@@ -165,7 +165,7 @@ define(['postmonger'], (Postmonger) => {
 
     function validateSelectors(){
        //TODO Configure validation of selectors
-
+       return true;
     }
 
 
@@ -238,11 +238,11 @@ define(['postmonger'], (Postmonger) => {
 
 
         if (step == null) {
-            $('#message').show();
+            $(setup).show();
             connection.trigger('updateButton', {
                 button: 'next',
                 text: 'Next',
-                enabled: validateMessage() 
+                enabled: validateSelectors() 
             });
             connection.trigger('updateButton', {
                 button: 'back',
@@ -251,14 +251,14 @@ define(['postmonger'], (Postmonger) => {
         }
 
         
-
+/*
         switch(currentStep.key) {
             case 'message':
             $('#message').show();
             connection.trigger('updateButton', {
                 button: 'next',
                 text: 'Next',
-                enabled: validateMessage() 
+                enabled: validateSelectors() 
             });
             connection.trigger('updateButton', {
                 button: 'back',
@@ -278,6 +278,7 @@ define(['postmonger'], (Postmonger) => {
             });
             break;
         }
+        */
     }
 
     function getMessageIfExists(data){
@@ -297,5 +298,8 @@ define(['postmonger'], (Postmonger) => {
 
 
    }
+
+
+   
 
 });
