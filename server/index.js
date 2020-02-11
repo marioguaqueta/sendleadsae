@@ -103,26 +103,31 @@ function createJson(decoded, task_id){
   
   inArguments.forEach(function(obj) { 
     if (obj.email != undefined) {
-      emailField = JSON.stringify(obj.email);
+      emailField = obj.email;
     }
     else if (obj.firstname != undefined) {
-      firstnameField = JSON.stringify(obj.firstname);
+      firstnameField = obj.firstname;
     }
     else if (obj.middlename != undefined) {
-      middlenameField = JSON.stringify(obj.middlename);
+      middlenameField = obj.middlename;
     }
     else if (obj.lastname != undefined) {
-      lastnameField = JSON.stringify(obj.lastname);
+      lastnameField = obj.lastname;
     }
     else if (obj.UTMC != undefined) {
-      UTMCField = JSON.stringify(obj.UTMC);
+      UTMCField = obj.UTMC;
+      console.log("UTMCField " + UTMCField);
     }
     else if (obj.UTMS != undefined) {
-      UTMSField = JSON.stringify(obj.UTMS);
+      UTMSField = obj.UTMS;
+      console.log(UTMSField);
     }else{
       regex['%%' + extractFieldName(Object.keys(obj)) + '%%'] =  Object.values(obj);
     }   
   });
+
+
+  console.log("regex[firstnameField] " + regex[firstnameField]);
 
   
     var options = {
@@ -166,15 +171,7 @@ function extractFieldName(field) {
   return field.toString().substring(index + 1);
 }
 
-function GFG_Fun(Obj, str) { 
-  var regex = Obj;
-  var RE = new RegExp(Object.keys(regex).join("|"), "gi"); 
-  var newMessage = str.replace(RE, function(matched) { 
-      return regex[matched]; 
-  });
 
-  return newMessage;
-}
 
 function randomString(length, chars) {
   var result = '';
