@@ -172,7 +172,7 @@ define(['postmonger'], (Postmonger) => {
         inArguments.push({ "firstname": $(select02).val() });
         inArguments.push({ "middlename": $(select03).val() });
         inArguments.push({ "lastname": $(select04).val() });     
-        inArguments.push({ "UTMc": $(select05).val() });
+        inArguments.push({ "UTMC": $(select05).val() });
         inArguments.push({ "UTMS": $(select06).val() });
         
         payload['metaData'].isConfigured = true;       
