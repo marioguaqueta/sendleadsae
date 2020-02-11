@@ -236,12 +236,12 @@ define(['postmonger'], (Postmonger) => {
                 }
             }
         }
-        $(select01).change(validateOnChange());
-        $(select02).change(validateOnChange());
-        $(select03).change(validateOnChange());
-        $(select04).change(validateOnChange());
-        $(select05).change(validateOnChange());
-        $(select06).change(validateOnChange());
+        $(select01).change(validateOnChange);
+        $(select02).change(validateOnChange);
+        $(select03).change(validateOnChange);
+        $(select04).change(validateOnChange);
+        $(select05).change(validateOnChange);
+        $(select06).change(validateOnChange);
     }
 
     function validateOnChange(){
