@@ -87,6 +87,53 @@ app.post('/execute',function (req, res){
   });
 
 
+/*
+var inArguments = [
+  { "com.aeromexico.event.data.Source": "0" },
+  {
+  "com.aeromexico.event.data.EmailAddress": "jorge.guaqueta@globant.com"
+  },
+  { "com.aeromexico.event.data.CreateDate": "2/11/2020 12:00:00 AM" },
+  { "com.aeromexico.event.data.LastName": "Guaquta" },
+  { "com.aeromexico.event.data.FirstName": "Jorge" },
+  { "com.aeromexico.event.data.Address": "Calle 173" },
+  { "com.aeromexico.event.data.City": "Bogota" },
+  { "com.aeromexico.event.data.State": "Bogota" },
+  { "com.aeromexico.event.data.ZipCode": "11001" },
+  { "com.aeromexico.event.data.Locale": "en_US" },
+  { "com.aeromexico.event.data.Phone": "573114913693" },
+  { "com.aeromexico.event.data.Gender": "M" },
+  { "com.aeromexico.event.data.BirthDate": "Oct" },
+  { "com.aeromexico.event.data.Email_Opt_in": "False" },
+  { "com.aeromexico.event.data.Mobile_Opt_in": "False" },
+  { "com.aeromexico.event.data.Country": "" },
+  { "com.aeromexico.event.data.Company": "" },
+  { "com.aeromexico.event.data.PageID": "" },
+  { "com.aeromexico.event.data.TabID": "" },
+  { "com.aeromexico.event.data.TrackingCode": "" },
+  { "com.aeromexico.event.data.ContentID": "" },
+  { "com.aeromexico.event.data.FacebookUserID": "" },
+  { "com.aeromexico.event.data.TwitterHandle": "" },
+  { "com.aeromexico.event.data.ModifiedDate": "2/11/2020 10:52:04 AM" },
+  { "com.aeromexico.event.data.CreatedBy": "" },
+  { "com.aeromexico.event.data.ModifiedBy": "" },
+  { "com.aeromexico.event.data.Terms_Conditions": "False" },
+  { "com.aeromexico.event.data.IsMobile": "False" },
+  { "com.aeromexico.event.data.FormID": "" },
+  { "email": "%%EmailAddress%%" },
+  { "firstname": "%%FirstName%%" },
+  { "middlename": "%%Address%%" },
+  { "lastname": "%%LastName%%" },
+  { "UTMC": "%%City%%" },
+  { "UTMS": "%%ZipCode%%" }
+  ];
+
+  createJson(inArguments, task_id);
+  res.status(200);
+  res.send({
+      route: 'execute'
+  });
+  */
 
 });
 
@@ -116,30 +163,13 @@ function createJson(decoded, task_id){
     }
     else if (obj.UTMC != undefined) {
       UTMCField = obj.UTMC;
-      console.log("UTMCField " + UTMCField);
     }
     else if (obj.UTMS != undefined) {
       UTMSField = obj.UTMS;
-      console.log(UTMSField);
     }else{
-      console.log("Keys " + Object.keys(obj) + " VALUES " + Object.values(obj));
-      regex['%%' + extractFieldName(Object.keys(obj)) + '%%'] =  Object.values(obj);
+      regex['%%' + extractFieldName(Object.keys(obj)) + '%%'] =  Object.values(obj).toString();
     }   
   });
-
-  var firstname = regex[firstnameField];
-  var middlename = regex[middlenameField];
-  var lastname = regex[lastnameField];
-  var email = regex[emailField];
-  var UTMS = regex[UTMSField];
-  var UTMc = regex[UTMCField];
-  console.log(firstname);
-  console.log(middlename);
-  console.log(lastname);
-  console.log(email);
-  console.log(UTMS);
-  console.log(UTMc);
-  
 
   
     var options = {
@@ -150,12 +180,12 @@ function createJson(decoded, task_id){
       },
       body:{
         'id_task':task_id,
-        'firstname':firstname,
-        'middlename':middlename,
-        'lastname' : lastname,
-        'email': email,
-        'UTMS':UTMS,
-        'UTMc':UTMc
+        'firstname':regex[firstnameField],
+        'middlename':regex[middlenameField],
+        'lastname' : regex[lastnameField],
+        'email': regex[emailField],
+        'UTMS':regex[UTMSField],
+        'UTMc':regex[UTMCField]
        },
       json: true
     };
