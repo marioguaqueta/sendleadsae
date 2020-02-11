@@ -16,6 +16,7 @@ define(['postmonger'], (Postmonger) => {
 
     let summary = "#summary";
     let setup = "#setup";
+    let noDE = "#noDE";
     let select01 = "#select-01";
     let select02 = "#select-02";
     let select03 = "#select-03";
@@ -61,12 +62,8 @@ define(['postmonger'], (Postmonger) => {
         connection.trigger('ready');
         connection.trigger('requestSchema');
         connection.trigger('requestTriggerEventDefinition');
-
-
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
-
-
     }
 
 
@@ -127,9 +124,23 @@ define(['postmonger'], (Postmonger) => {
     function onRequestSchema(data) {
         console.log('schemaDefinition', data);
         schema = data['schema']; 
+        if (schema.length() == 0){
+            $(noDE).show();
+            disableButtonNext(false);
+        }else{
+            $(noDE).hide();
+            disableButtonNext(true);
+        }
         fillPlaceholderList(schema);    
     }
 
+    function disableButtonNext(enabledStatus){
+        connection.trigger('updateButton', {
+            button: 'next',
+            text: 'Next',
+            enabled: enabledStatus
+        });
+    }
 
     
     function onRequestEventDefinition(eventDefinition) {
