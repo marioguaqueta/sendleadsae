@@ -102,22 +102,22 @@ function createJson(decoded, task_id){
   
   inArguments.forEach(function(obj) { 
     if (obj.email != undefined) {
-      emailField = obj.email;
+      emailField = JSON.stringify(obj.email);
     }
     else if (obj.firstname != undefined) {
-      firstnameField = obj.firstname;
+      firstnameField = JSON.stringify(obj.firstname);
     }
     else if (obj.middlename != undefined) {
-      middlenameField = obj.middlename;
+      middlenameField = JSON.stringify(obj.middlename);
     }
     else if (obj.lastname != undefined) {
-      lastnameField = obj.lastname;
+      lastnameField = JSON.stringify(obj.lastname);
     }
     else if (obj.UTMC != undefined) {
-      UTMCField = obj.UTMC;
+      UTMCField = JSON.stringify(obj.UTMC);
     }
     else if (obj.UTMS != undefined) {
-      UTMSField = obj.UTMS;
+      UTMSField = JSON.stringify(obj.UTMS);
     }else{
       regex['%%' + extractFieldName(Object.keys(obj)) + '%%'] =  Object.values(obj);
     }   
