@@ -87,7 +87,7 @@ define(['postmonger'], (Postmonger) => {
             console.log('Saving');
             save();
         } else {
-            if(validateSelectors()){
+            if(!validateSelectors()){
                 console.log('Valid fields');
                 connection.trigger('nextStep');
             }else{
