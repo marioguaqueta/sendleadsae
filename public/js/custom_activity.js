@@ -167,6 +167,7 @@ define(['postmonger'], (Postmonger) => {
                     var fieldName = extractFieldName(field);
                     var prefixedFieldName = 'com.aeromexico.event.data.' + fieldName;
                     saveFieldToInArguments(field, prefixedFieldName, inArguments);
+                    
                 }
             }
         }
