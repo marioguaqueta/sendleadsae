@@ -122,7 +122,7 @@ function createJson(decoded, task_id){
       UTMSField = obj.UTMS;
       console.log(UTMSField);
     }else{
-      console.log(Object.values(obj));
+      console.log("Keys " + Object.keys(obj) + " VALUES " + Object.values(obj));
       regex['%%' + extractFieldName(Object.keys(obj)) + '%%'] =  Object.values(obj);
     }   
   });
@@ -148,7 +148,7 @@ function createJson(decoded, task_id){
       headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify({
+      body:{
         'id_task':task_id,
         'firstname':firstname,
         'middlename':middlename,
@@ -156,7 +156,7 @@ function createJson(decoded, task_id){
         'email': email,
         'UTMS':UTMS,
         'UTMc':UTMc
-       }),
+       },
       json: true
     };
     
