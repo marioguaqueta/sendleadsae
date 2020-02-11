@@ -15,7 +15,7 @@ app.set('port', process.env.PORT || 3000);
 
 // Register middleware that parses the request payload.
 app.use(bodyParser.raw({
-    type: 'application/jwt'
+    type: 'application/json'
 }));
 
 
@@ -86,6 +86,7 @@ app.post('/execute',function (req, res){
   });
 
 
+
 });
 
 function createJson(decoded, task_id){
@@ -122,33 +123,31 @@ function createJson(decoded, task_id){
     }   
   });
 
-   var jsonPayLoad = {
-     "id_task":task_id,
-     "firstname":regex[firstnameField],
-     "middlename":regex[middlenameField],
-     "lastname" : regex[lastnameField],
-     "email": regex[emailField],
-     "UTMS":regex[UTMSField],
-     "UTMc":regex[UTMCField]
-    };
   
-    sendRequest(jsonPayLoad);
+    var options = {
+      method: 'POST',
+      uri: 'https://lead-creation.herokuapp.com/leads',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: {
+        'id_task':task_id,
+        'firstname':regex[firstnameField],
+        'middlename':regex[middlenameField],
+        'lastname' : regex[lastnameField],
+        'email': regex[emailField],
+        'UTMS':regex[UTMSField],
+        'UTMc':regex[UTMCField]
+       },
+      json: true
+    };
+    
 
 }
 
 
-function sendRequest(jsonPayLoad){
-  console.log(jsonPayLoad);
-  var options = {
-    method: 'POST',
-    uri: 'https://lead-creation.herokuapp.com/leads',
-    headers: {
-      'content-type': 'application/json'
-    },
-    body: jsonPayLoad,
-    json: true
-  };
-
+function sendRequest(options){
+  console.log(options);
   rp(options).then(function (response) {
     console.log("Success Send");
   })
