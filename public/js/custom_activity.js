@@ -124,6 +124,7 @@ define(['postmonger'], (Postmonger) => {
     function onRequestSchema(data) {
         console.log('schemaDefinition', data);
         schema = data['schema']; 
+        /*
         if (schema.length() == 0){
             $(noDE).show();
             disableButtonNext(false);
@@ -131,6 +132,7 @@ define(['postmonger'], (Postmonger) => {
             $(noDE).hide();
             disableButtonNext(true);
         }
+        */
         fillPlaceholderList(schema);    
     }
 
