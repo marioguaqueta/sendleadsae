@@ -168,12 +168,12 @@ define(['postmonger'], (Postmonger) => {
             }
         }
 
-        payload['metaData'].inArguments.push({ "email": $(select01).val() });
-        payload['metaData'].inArguments.push({ "firstname": $(select02).val() });
-        payload['metaData'].inArguments.push({ "middlename": $(select03).val() });
-        payload['metaData'].inArguments.push({ "lastname": $(select04).val() });     
-        payload['metaData'].inArguments.push({ "UTMc": $(select05).val() });
-        payload['metaData'].inArguments.push({ "UTMS": $(select06).val() });
+        inArguments.push({ "email": $(select01).val() });
+        inArguments.push({ "firstname": $(select02).val() });
+        inArguments.push({ "middlename": $(select03).val() });
+        inArguments.push({ "lastname": $(select04).val() });     
+        inArguments.push({ "UTMc": $(select05).val() });
+        inArguments.push({ "UTMS": $(select06).val() });
         
         payload['metaData'].isConfigured = true;       
         payload['arguments'].execute.inArguments = inArguments;
@@ -245,7 +245,6 @@ define(['postmonger'], (Postmonger) => {
     }
 
     function validateOnChange(){
-        console.log("Changing Validate");
         disableButtonNext(validateSelectors());
     }
 
