@@ -157,11 +157,11 @@ function GFG_Fun(Obj, str) {
   return newMessage;
 }
 
-
-/*
-
-*/
-
+function randomString(length, chars) {
+  var result = '';
+  for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
+  return result;
+}
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
