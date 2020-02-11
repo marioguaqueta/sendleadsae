@@ -85,13 +85,13 @@ define(['postmonger'], (Postmonger) => {
 
         if(currentStep.key === 'summary') {
             console.log('Saving');
-            //save();
+            save();
         } else {
             if(validateSelectors()){
-                console.log('Valid Message');
+                console.log('Valid fields');
                 connection.trigger('nextStep');
             }else{
-                console.log('invalid Message');
+                console.log('invalid fields');
                
             }
             
@@ -124,15 +124,13 @@ define(['postmonger'], (Postmonger) => {
     function onRequestSchema(data) {
         console.log('schemaDefinition', data);
         schema = data['schema']; 
-        /*
-        if (schema.length() == 0){
+        if (schema.length == 0){
             $(noDE).show();
             disableButtonNext(false);
         }else{
             $(noDE).hide();
             disableButtonNext(true);
         }
-        */
         fillPlaceholderList(schema);    
     }
 
@@ -153,7 +151,7 @@ define(['postmonger'], (Postmonger) => {
     }
 
     function save() {
-
+        //Armar el JSON
         configureInArguments();
         console.log("ON SAVE: " + JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
@@ -167,7 +165,7 @@ define(['postmonger'], (Postmonger) => {
                 var field = schema[i];
                 if (isEventDataSourceField(field)) {
                     var fieldName = extractFieldName(field);
-                    var prefixedFieldName = 'com.globant.event.data.' + fieldName;
+                    var prefixedFieldName = 'com.aeromexico.event.data.' + fieldName;
                     saveFieldToInArguments(field, prefixedFieldName, inArguments);
                 }
             }
@@ -178,7 +176,36 @@ define(['postmonger'], (Postmonger) => {
 
 
     function validateSelectors(){
-       //TODO Configure validation of selectors
+        if ($(select01).val() == ""){
+            $(select01).focus();
+            return false;
+        }
+
+        if ($(select02).val() == ""){
+            $(select02).focus();
+            return false;
+        }
+
+        if ($(select03).val() == ""){
+            $(select03).focus();
+            return false;
+        }
+
+        if ($(select04).val() == ""){
+            $(select04).focus();
+            return false;
+        }
+
+
+        if ($(select05).val() == ""){
+            $(select05).focus();
+            return false;
+        }
+
+        if ($(select06).val() == ""){
+            $(select06).focus();
+            return false;
+        }       
        return true;
     }
 
@@ -198,38 +225,17 @@ define(['postmonger'], (Postmonger) => {
                 var field = schema[i];
                 var fieldName = extractFieldName(field);
                 if (isEventDataSourceField(field)) {
-
                     $(select01).append('<option value="%%'+fieldName+'%%">' + fieldName + '</option>');
                     $(select02).append('<option value="%%'+fieldName+'%%">' + fieldName + '</option>');
                     $(select03).append('<option value="%%'+fieldName+'%%">' + fieldName + '</option>');
                     $(select04).append('<option value="%%'+fieldName+'%%">' + fieldName + '</option>');
                     $(select05).append('<option value="%%'+fieldName+'%%">' + fieldName + '</option>');
                     $(select06).append('<option value="%%'+fieldName+'%%">' + fieldName + '</option>');
-                    
-                    
                 }
             }
         }
     }
 
-
-    function fillPhoneCombobox(schema) {
-        console.log('Fill Phone');
-        if (schema !== undefined && schema.length > 0) {
-            for (var i in schema) {
-                var field = schema[i];
-                var fieldName = extractFieldName(field);
-                var fieldValue = "{{" + field.key + "}}";
-                var fieldType = field.type;
-                if(fieldType == "Phone"){                    
-                    if (isEventDataSourceField(field)) {
-                        var selected = fieldValue === phoneSelectorValue;
-                        $(phoneSelector).append(new Option(fieldName, fieldValue, false, selected));
-                    }
-                }
-            }
-        }
-    }
 
     function extractFieldName(field) {
         var index = field.key.lastIndexOf('.');
@@ -265,10 +271,10 @@ define(['postmonger'], (Postmonger) => {
         }
 
         
-/*
+
         switch(currentStep.key) {
-            case 'message':
-            $('#message').show();
+            case 'setup':
+            $(setup).show();
             connection.trigger('updateButton', {
                 button: 'next',
                 text: 'Next',
@@ -279,8 +285,8 @@ define(['postmonger'], (Postmonger) => {
                 visible: false
             });
             break;
-            case 'review':
-            $('#review').show();
+            case 'summary':
+            $(summary).show();
             connection.trigger('updateButton', {
                 button: 'back',
                 visible: true
@@ -292,26 +298,8 @@ define(['postmonger'], (Postmonger) => {
             });
             break;
         }
-        */
-    }
-
-    function getMessageIfExists(data){
-       data.arguments.execute.inArguments.forEach(function(obj) { 
-
-        if (obj.message != undefined) {
-            message = obj.message;
-            console.log("OLD MESSAGE " + message);
-            $(messageText).val(message);
-        }else if (obj.phone != undefined) {
-            phoneSelectorValue = obj.phone;
-            console.log("OLD Phone " + phoneSelectorValue);
-            $(phoneSelector).val(phoneSelectorValue);
         
-        }
-    });
-
-
-   }
+    }
 
 
    
