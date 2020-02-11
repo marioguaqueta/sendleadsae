@@ -15,7 +15,7 @@ app.set('port', process.env.PORT || 3000);
 
 // Register middleware that parses the request payload.
 app.use(bodyParser.raw({
-    type: 'application/json'
+    type: 'application/jwt'
 }));
 
 
@@ -60,6 +60,8 @@ app.post('/execute',function (req, res){
 
   console.log('EXECUTE');
   var task_id = randomString(48, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+  
+  
   JWT(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret, (err, decoded) => {
       
       if (err) {
@@ -69,7 +71,6 @@ app.post('/execute',function (req, res){
 
       if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
 
-          //Logica de backend
           console.log(decoded.inArguments);
           createJson(decoded.inArguments, task_id);
           res.status(200);
@@ -130,7 +131,7 @@ function createJson(decoded, task_id){
       headers: {
         'content-type': 'application/json'
       },
-      body: {
+      body: JSON.stringify({
         'id_task':task_id,
         'firstname':regex[firstnameField],
         'middlename':regex[middlenameField],
@@ -138,10 +139,12 @@ function createJson(decoded, task_id){
         'email': regex[emailField],
         'UTMS':regex[UTMSField],
         'UTMc':regex[UTMCField]
-       },
+       }),
       json: true
     };
     
+
+    sendRequest(options);
 
 }
 
