@@ -23,6 +23,9 @@ define(['postmonger'], (Postmonger) => {
     let select04 = "#select-04";
     let select05 = "#select-05";
     let select06 = "#select-06";
+    let select06 = "#select-06";
+    let select06 = "#select-06";
+    let select06 = "#select-06";
 
 
     //Global Variable
@@ -167,59 +170,30 @@ define(['postmonger'], (Postmonger) => {
                 }
             }
         }
-
-        inArguments.push({ "email": $(select01).val() });
-        inArguments.push({ "firstname": $(select02).val() });
-        inArguments.push({ "middlename": $(select03).val() });
-        inArguments.push({ "lastname": $(select04).val() });     
-        inArguments.push({ "UTMC": $(select05).val() });
-        inArguments.push({ "UTMS": $(select06).val() });
+        for (var i = 1; i <= 15; i++){
+            var name = $("#select-"+i).attr("name");
+            inArguments.push({ name : $("#select-"+i).val() });
+        }
         
         payload['metaData'].isConfigured = true;       
         payload['arguments'].execute.inArguments = inArguments;
     }
 
     function validateSelectors(){
-        if ($(select01).val() == ""){
-            $(select01).focus();
-            return false;
+
+        for (var i = 1; i <= 15; i++){
+            if ($("#select-"+i).val() == "" && $("#select-"+i).prop('required')){
+                return false;
+            }
         }
-
-        if ($(select02).val() == ""){
-            $(select02).focus();
-            return false;
-        }
-
-        if ($(select03).val() == ""){
-            $(select03).focus();
-            return false;
-        }
-
-        if ($(select04).val() == ""){
-            $(select04).focus();
-            return false;
-        }
-
-
-        if ($(select05).val() == ""){
-            $(select05).focus();
-            return false;
-        }
-
-        if ($(select06).val() == ""){
-            $(select06).focus();
-            return false;
-        }       
        return true;
     }
 
     function fillPlaceholderList(schema) {
-        $(select01).html('<option value="">Seleccione el campo</option>');
-        $(select02).html('<option value="">Seleccione el campo</option>');
-        $(select03).html('<option value="">Seleccione el campo</option>');
-        $(select04).html('<option value="">Seleccione el campo</option>');
-        $(select05).html('<option value="">Seleccione el campo</option>');
-        $(select06).html('<option value="">Seleccione el campo</option>');
+        for (var i = 1; i <= 15; i++){
+            $("#select-"+i).html('<option value="">Seleccione el campo</option>');
+        }
+        
         if (schema !== undefined && schema.length > 0) {
             //console.log("With Fields");
             for (var i in schema) {
@@ -227,21 +201,16 @@ define(['postmonger'], (Postmonger) => {
                 var field = schema[i];
                 var fieldName = extractFieldName(field);
                 if (isEventDataSourceField(field)) {
-                    $(select01).append('<option value="%%'+fieldName+'%%">' + fieldName + '</option>');
-                    $(select02).append('<option value="%%'+fieldName+'%%">' + fieldName + '</option>');
-                    $(select03).append('<option value="%%'+fieldName+'%%">' + fieldName + '</option>');
-                    $(select04).append('<option value="%%'+fieldName+'%%">' + fieldName + '</option>');
-                    $(select05).append('<option value="%%'+fieldName+'%%">' + fieldName + '</option>');
-                    $(select06).append('<option value="%%'+fieldName+'%%">' + fieldName + '</option>');
+                    for (var i = 1; i <= 15; i++){
+                        $("#select-"+i).append('<option value="%%'+fieldName+'%%">' + fieldName + '</option>');
+                    }
                 }
             }
         }
-        $(select01).change(validateOnChange);
-        $(select02).change(validateOnChange);
-        $(select03).change(validateOnChange);
-        $(select04).change(validateOnChange);
-        $(select05).change(validateOnChange);
-        $(select06).change(validateOnChange);
+        for (var i = 1; i <= 15; i++){
+            $("#select-"+i).change(validateOnChange);
+        }
+        
     }
 
     function validateOnChange(){
