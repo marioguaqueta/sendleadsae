@@ -17,15 +17,7 @@ define(['postmonger'], (Postmonger) => {
     let summary = "#summary";
     let setup = "#setup";
     let noDE = "#noDE";
-    let select01 = "#select-01";
-    let select02 = "#select-02";
-    let select03 = "#select-03";
-    let select04 = "#select-04";
-    let select05 = "#select-05";
-    let select06 = "#select-06";
-    let select06 = "#select-06";
-    let select06 = "#select-06";
-    let select06 = "#select-06";
+
 
 
     //Global Variable
