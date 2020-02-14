@@ -164,7 +164,7 @@ define(['postmonger'], (Postmonger) => {
         }
         for (var i = 1; i <= 15; i++){
             var obj = {};
-            obj[$("#select-"+i).attr("name")] = "{{" + $("#select-"+i).val() + "}}";
+            obj[$("#select-"+i).attr("name")] =  $("#select-"+i).val();
             inArguments.push(obj);
         }
         

@@ -219,7 +219,7 @@ function createJson(decoded, task_id) {
 
   var optionsToken = {
     method: 'POST',
-    uri: 'https://lead-creation.herokuapp.com/token',
+    uri: 'https://dev-svoc-mc-create-lead.herokuapp.com/token',
     headers: {
       'content-type': 'application/json',
       'Authorization': 'Basic e2a2f94bf46f99a4da6ba14b2c0cc1b5'
@@ -234,7 +234,7 @@ function createJson(decoded, task_id) {
 
     var optionsHeroku = {
       method: 'POST',
-      uri: 'https://lead-creation.herokuapp.com/leads',
+      uri: 'https://dev-svoc-mc-create-lead.herokuapp.com/leads',
       headers: {
         'content-type': 'application/json',
         'Authorization': 'Bearer ' + response.token
