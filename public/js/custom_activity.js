@@ -163,8 +163,9 @@ define(['postmonger'], (Postmonger) => {
             }
         }
         for (var i = 1; i <= 15; i++){
-            var name = $("#select-"+i).attr("name");
-            inArguments.push({ name : $("#select-"+i).val() });
+            var obj = {};
+            obj[$("#select-"+i).attr("name")] = "{{" + $("#select-"+i).val() + "}}";
+            inArguments.push(obj);
         }
         
         payload['metaData'].isConfigured = true;       
