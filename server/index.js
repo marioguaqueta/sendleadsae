@@ -60,8 +60,6 @@ app.post('/execute',function (req, res){
 
   console.log('EXECUTE');
   var task_id = randomString(48, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
-  
-  
   JWT(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret, (err, decoded) => {
       
       if (err) {
@@ -201,7 +199,7 @@ function sendRequest(options){
   rp(options).then(function (response) {
     console.log("Success Send");
   })
-    .catch(function (err) {
+  .catch(function (err) {
       console.log("Failed Send");
     });
 }
