@@ -22,10 +22,10 @@
 
     <div class="container-fluid step" id="setup">
 
-    <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning" role="alert" id="noDE">
+        <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning" role="alert" id="noDE">
             <h2>¡Debes seleccionar una Data Extension!
             </h2>
-    </div>
+        </div>
 
         <article class="slds-card">
             <div class="slds-page-header">
@@ -89,46 +89,20 @@
 
             </thead>
             <tbody>
-
                 <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
                     tabindex="0">
-                    <td data-label="Phone Number" role="gridcell">
-                        <div class="slds-truncate" title="Email">
-                            <div class="slds-truncate" title="First Name">
-                                <b>
-                                    <span>Email</span>
-                                </b>
-                            </div>
-                        </div>
-                    </td>
-                    <td data-label="Employees" role="gridcell">
-                        <div class="slds-form-element">
-                            <div class="slds-form-element__control">
-                                <div class="slds-select_container">
-                                    <select class="slds-select" id="select-01" required>
-                                        <option value="">Seleccione el campo</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-
-
-                </tr>
-                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
-                    tabindex="0">
-                    <td data-label="Phone Number" role="gridcell">
+                    <td data-label="First Name" role="gridcell">
                         <div class="slds-truncate" title="First Name">
                             <b>
-                                <span>First Name</span>
+                                <span>Primer nombre</span>
                             </b>
                         </div>
                     </td>
-                    <td data-label="Employees" role="gridcell">
+                    <td data-label="First Name" role="gridcell">
                         <div class="slds-form-element">
                             <div class="slds-form-element__control">
                                 <div class="slds-select_container">
-                                    <select class="slds-select" id="select-02" required>
+                                    <select class="slds-select" id="select-1" name="firstname" required>
                                         <option value="">Seleccione el campo</option>
                                     </select>
                                 </div>
@@ -141,20 +115,18 @@
 
                 <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
                     tabindex="0">
-                    <td data-label="Phone Number" role="gridcell">
+                    <td data-label="Middle Name" role="gridcell">
                         <div class="slds-truncate" title="Middle Name">
-                            <div class="slds-truncate" title="First Name">
-                                <b>
-                                    <span>Middle Name</span>
-                                </b>
-                            </div>
+                            <b>
+                                <span>Segundo nombre</span>
+                            </b>
                         </div>
                     </td>
-                    <td data-label="Employees" role="gridcell">
+                    <td data-label="Middle Name" role="gridcell">
                         <div class="slds-form-element">
                             <div class="slds-form-element__control">
                                 <div class="slds-select_container">
-                                    <select class="slds-select" id="select-03" required>
+                                    <select class="slds-select" id="select-2" name="middlename">
                                         <option value="">Seleccione el campo</option>
                                     </select>
                                 </div>
@@ -165,23 +137,20 @@
 
                 </tr>
 
-
                 <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
                     tabindex="0">
-                    <td data-label="Phone Number" role="gridcell">
+                    <td data-label="Last Name" role="gridcell">
                         <div class="slds-truncate" title="Last Name">
-                            <div class="slds-truncate" title="First Name">
-                                <b>
-                                    <span>Last Name</span>
-                                </b>
-                            </div>
+                            <b>
+                                <span>Primer apellido</span>
+                            </b>
                         </div>
                     </td>
-                    <td data-label="Employees" role="gridcell">
+                    <td data-label="Last Name" role="gridcell">
                         <div class="slds-form-element">
                             <div class="slds-form-element__control">
                                 <div class="slds-select_container">
-                                    <select class="slds-select" id="select-04" required>
+                                    <select class="slds-select" id="select-3" name="lastname" required>
                                         <option value="">Seleccione el campo</option>
                                     </select>
                                 </div>
@@ -194,20 +163,264 @@
 
                 <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
                     tabindex="0">
-                    <td data-label="Phone Number" role="gridcell">
+                    <td data-label="Second Last Name" role="gridcell">
+                        <div class="slds-truncate" title="Second Last Name">
+                            <b>
+                                <span>Segundo apellido</span>
+                            </b>
+                        </div>
+                    </td>
+                    <td data-label="Second Last Name" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-4" name="suffix">
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+
+
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="Email" role="gridcell">
+                        <div class="slds-truncate" title="Email">
+                            <b>
+                                <span>Email</span>
+                            </b>
+                        </div>
+                    </td>
+                    <td data-label="Email" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-5" name="email" required>
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="Major 18" role="gridcell">
+                        <div class="slds-truncate" title="Major 18">
+                            <b>
+                                <span>Soy mayor de 18</span>
+                            </b>
+                        </div>
+                    </td>
+                    <td data-label="Major 18" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-6" name="major18">
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+
+
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="Privacy Policy" role="gridcell">
+                        <div class="slds-truncate" title="Privacy Policy">
+                            <b>
+                                <span>Acepto aviso de privacidad</span>
+                            </b>
+                        </div>
+                    </td>
+                    <td data-label="Privacy Policy" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-7" name="privacy_policy">
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="Send Information" role="gridcell">
+                        <div class="slds-truncate" title="Send Information">
+                            <b>
+                                <span>Acepto envio de información</span>
+                            </b>
+                        </div>
+                    </td>
+                    <td data-label="Send Information" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-8" name="has_opted_out_of_email">
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="Gender" role="gridcell">
+                        <div class="slds-truncate" title="Gender">
+                            <b>
+                                <span>Género</span>
+                            </b>
+                        </div>
+                    </td>
+                    <td data-label="Gender" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-9" name="gender">
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="Mobile" role="gridcell">
+                        <div class="slds-truncate" title="Mobile">
+                            <b>
+                                <span>Celular</span>
+                            </b>
+                        </div>
+                    </td>
+                    <td data-label="Mobile" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-10" name="mobile_phone">
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="Birth Date" role="gridcell">
+                        <div class="slds-truncate" title="Birth Date">
+                            <b>
+                                <span>Fecha de nacimiento</span>
+                            </b>
+                        </div>
+                    </td>
+                    <td data-label="Birth Date" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-11" name="birthdate">
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="Country" role="gridcell">
+                        <div class="slds-truncate" title="Country">
+                            <b>
+                                <span>País</span>
+                            </b>
+                        </div>
+                    </td>
+                    <td data-label="Country" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-12" name="country">
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="City" role="gridcell">
+                        <div class="slds-truncate" title="City">
+                            <b>
+                                <span>Ciudad</span>
+                            </b>
+                        </div>
+                    </td>
+                    <td data-label="City" role="gridcell">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <div class="slds-select_container">
+                                    <select class="slds-select" id="select-13" name="city">
+                                        <option value="">Seleccione el campo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+
+                </tr>
+
+                <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
+                    tabindex="0">
+                    <td data-label="UTMC" role="gridcell">
                         <div class="slds-truncate" title="UTMC">
-                            <div class="slds-truncate" title="First Name">
-                                <b>
-                                    <span>UTMC</span>
-                                </b>
-                            </div>
+                            <b>
+                                <span>UTMC</span>
+                            </b>
                         </div>
                     </td>
-                    <td data-label="Employees" role="gridcell">
+                    <td data-label="UTMC" role="gridcell">
                         <div class="slds-form-element">
                             <div class="slds-form-element__control">
                                 <div class="slds-select_container">
-                                    <select class="slds-select" id="select-05" required>
+                                    <select class="slds-select" id="select-14" name="UTMc" required>
                                         <option value="">Seleccione el campo</option>
                                     </select>
                                 </div>
@@ -217,22 +430,21 @@
 
 
                 </tr>
+
                 <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent"
                     tabindex="0">
-                    <td data-label="Phone Number" role="gridcell">
+                    <td data-label="UTMS" role="gridcell">
                         <div class="slds-truncate" title="UTMS">
-                            <div class="slds-truncate" title="First Name">
-                                <b>
-                                    <span>UTMS</span>
-                                </b>
-                            </div>
+                            <b>
+                                <span>UTMS</span>
+                            </b>
                         </div>
                     </td>
-                    <td data-label="Employees" role="gridcell">
+                    <td data-label="UTMS" role="gridcell">
                         <div class="slds-form-element">
                             <div class="slds-form-element__control">
                                 <div class="slds-select_container">
-                                    <select class="slds-select" id="select-06" required>
+                                    <select class="slds-select" id="select-15" name="UTMS" required>
                                         <option value="">Seleccione el campo</option>
                                     </select>
                                 </div>
@@ -242,6 +454,8 @@
 
 
                 </tr>
+
+
             </tbody>
         </table>
     </div>
@@ -252,6 +466,56 @@
             </h2>
         </div>
 
+    </div>
+
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-1 slds-large-size_8-of-12">
+          <span>1</span>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+          <span>2</span>
+        </div>
+      </div>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+            <div class="lds-box_x-small">
+                <img src="./img/heroku.jpg" />
+                <h3> SU IMAGEN </h3>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+            <div class="slds-box_x-small">
+                <ul>
+                    <li>
+                        <h3> Ligas de Interés </h3>
+                    </li>
+                    <li> <a href="https://wl.primeraplus.com.mx/" target="_blank"> Primera Plus </a> </li>
+                    <li> <a href="https://www.facturaelectronicagfa.mx/#/inicio" target="_blank"> Facturaci&oacute;n
+                        </a> </li>
+                    <li> <a href="https://www.enviosprimeraplus.com/" target="_blank"> Envios Primera Plus </a> </li>
+                    <li> <a href="https://www.ttur.com.mx/#/inicio" target="_blank"> Ttur </a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+            <div class="slds-box_x-small">
+                <ul>
+                    <li>
+                        <h3> Servicio al cliente </h3>
+                    </li>
+                    <li> <a href="https://comentarios.primeraplus.com.mx/r/rSZ_5tV1aSC003VSHvyD_g/servicioacliente"
+                            target="_blank"> Servicio a Clientes </a> </li>
+                    <li> <a href="#"> Aviso de Privacidad </a> </li>
+                    <li> <a href="#"> Reglamento </a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-large-size_4-of-12">
+            <div class="lds-box_x-small">
+                <p>Copyright © 2020 - <strong>SiemprePlus</strong> | Llámanos: <a href="tel:+477 710 0060">477 710
+                        0060</a></p>
+            </div>
+        </div>
     </div>
 </body>
 
